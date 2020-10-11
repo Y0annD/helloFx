@@ -1,0 +1,41 @@
+plugins {
+  id 'application'
+  id 'java'
+  id 'checkstyle'
+  id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+checkstyle {
+    toolVersion '8.9'
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+}
+
+
+tasks.withType(Checkstyle) {
+        source 'src/main/java'
+        include '**/*.java'
+        exclude '**/gen/**'
+
+        // empty classpath
+//        classpath = rootProject.files()
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+repositories {
+    flatDir {
+	dirs 'lib'
+	}
+	maven {
+		url 'repo'
+	}
+mavenCentral()
+}
+javafx {
+sdk = '/home/y0annd/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/'
+    modules = [ 'javafx.controls' ]
+}
+
+mainClassName = 'HelloFX'

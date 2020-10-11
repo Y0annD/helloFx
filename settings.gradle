@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+//        flatDir {
+//            dirs 'lib'
+//        }
+        maven {
+            url 'repo'
+        }
+    }
+}
