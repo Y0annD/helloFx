@@ -34,7 +34,7 @@ repositories {
 mavenCentral()
 }
 javafx {
-sdk = '/home/y0annd/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/'
+	sdk = '/<your_path>/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/'
     modules = [ 'javafx.controls' ]
 }
 
